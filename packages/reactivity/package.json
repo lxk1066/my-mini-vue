@@ -1,0 +1,9 @@
+{
+  "name": "@mini-vue/reactivity",
+  "version": "1.0.0",
+  "description": "@mini-vue/reactivity",
+  "module": "dist/reactivity.esm-builder.js",
+  "scripts": {
+    "test": "vitest"
+  }
+}

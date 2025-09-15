@@ -1,0 +1,13 @@
+{
+  "name": "@mini-vue/runtime-core",
+  "version": "1.0.0",
+  "description": "@mini-vue/runtime-core",
+  "module": "dist/runtime-core.esm-builder.js",
+  "scripts": {
+    "test": "vitest"
+  },
+  "dependencies": {
+    "@mini-vue/reactivity": "workspace:*",
+    "@mini-vue/shared": "workspace:*"
+  }
+}

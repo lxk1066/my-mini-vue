@@ -1,0 +1,9 @@
+{
+  "name": "@mini-vue/shared",
+  "version": "1.0.0",
+  "description": "@mini-vue/shared",
+  "module": "dist/shared.esm-builder.js",
+  "scripts": {
+    "test": "vitest"
+  }
+}

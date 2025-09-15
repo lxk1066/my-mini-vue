@@ -1,0 +1,11 @@
+{
+  "name": "mini-vue",
+  "version": "1.0.0",
+  "description": "mini-vue",
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@mini-vue/runtime-dom": "workspace:*"
+  }
+}

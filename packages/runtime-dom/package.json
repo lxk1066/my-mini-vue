@@ -1,0 +1,12 @@
+{
+  "name": "@mini-vue/runtime-dom",
+  "version": "1.0.0",
+  "description": "@mini-vue/runtime-dom",
+  "module": "dist/runtime-dom.esm-builder.js",
+  "scripts": {
+    "test": "vitest"
+  },
+  "dependencies": {
+    "@mini-vue/runtime-core": "workspace:*"
+  }
+}

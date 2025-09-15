@@ -1,0 +1,26 @@
+{
+	"name": "my-mini-vue",
+	"version": "1.0.0",
+	"description": "从头开始手搓vue，以尤大讲解视频([跟尤雨溪一起解读Vue3源码【中英字幕】- Vue Mastery](https://www.bilibili.com/video/BV1rC4y187Vw))中的`mini-vue`作为基础版本来拓展。",
+	"main": "index.js",
+	"type": "module",
+	"scripts": {
+		"dev": "rollup -c -w",
+		"build": "rollup -c",
+		"test": "vitest"
+	},
+	"keywords": [],
+	"author": "",
+	"license": "ISC",
+	"devDependencies": {
+		"@rollup/plugin-commonjs": "^28.0.6",
+		"@rollup/plugin-node-resolve": "^16.0.1",
+		"@rollup/plugin-typescript": "^12.1.4",
+		"@types/node": "^24.4.0",
+		"rollup": "^4.50.2",
+		"rollup-plugin-sourcemaps": "^0.6.3",
+		"tslib": "^2.8.1",
+		"typescript": "^5.9.2",
+		"vitest": "^3.2.4"
+	}
+}

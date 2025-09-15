@@ -2,11 +2,12 @@
  * 响应式 Reactivity
  */
 
-let activeEffect = null;
+let activeEffect: any = null;
 
 // 依赖收集器
 class Dep {
-  constructor(value) {
+  subscribers: Set<any>
+  constructor() {
     this.subscribers = new Set();
   }
   depend() {
@@ -21,7 +22,7 @@ class Dep {
   }
 }
 
-function watchEffect(effect) {
+function watchEffect(effect: any) {
   activeEffect = effect;
   effect();
   activeEffect = null;
@@ -36,7 +37,7 @@ const targetMap = new WeakMap(); // 全局存储依赖
  * 只需要找到该属性对应的依赖收集器然后一次性通知，而不需要进行全局通知，更省资源
  */
 
-function getDep(target, key) {
+function getDep(target: Record<any, any>, key: string | symbol) {
   let depsMap = targetMap.get(target);
   if (!depsMap) {
     depsMap = new Map();
@@ -51,7 +52,7 @@ function getDep(target, key) {
   return dep;
 }
 
-function reactive(raw) {
+function reactive(raw: Record<any, any>) {
   return new Proxy(raw, {
     get(target, key, receiver) {
       const dep = getDep(target, key);
@@ -70,14 +71,3 @@ function reactive(raw) {
 }
 
 export { watchEffect, reactive }
-
-// 测试用例
-// const obj = reactive({
-//   num: 0,
-// });
-
-// watchEffect(() => {
-//   console.log("watchEffect", obj.num);
-// });
-
-// obj.num++;

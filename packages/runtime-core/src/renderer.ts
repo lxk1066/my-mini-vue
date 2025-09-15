@@ -2,8 +2,14 @@
  * 渲染器 Renderer
  */
 
+interface CreateElement {
+  tag: string
+  props: Record<string, any>
+  children: string | CreateElement[]
+}
+
 // 生成vDom
-function h(tag, props, children) {
+function h(tag: string, props: Record<string, any>, children: string | CreateElement[]): CreateElement {
   return {
     tag,
     props,
@@ -95,18 +101,3 @@ function patch(n1, n2) {
 }
 
 export { h, mount, patch }
-
-// 测试示例
-// const vdom = h("div", { id: "container" }, [
-//   h("h1", { style: "color: red" }, "Vue3"),
-//   h("p", { class: "content" }, "Hello Vue3")
-// ]);
-
-// mount(vdom, document.querySelector("#app"));
-
-// const vdom2 = h("div", { id: "container" }, [
-//   h("h1", { style: "color: red" }, "Hello Vue3"),
-//   h("p", { class: "content" }, "Vue3")
-// ]);
-
-// patch(vdom, vdom2);
